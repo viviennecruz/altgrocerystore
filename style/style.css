@@ -4,7 +4,9 @@ html, body {
   font-family: 'Raleway', sans-serif;
   background-color:lavenderblush;
   color: #0B3948;
-  height: 100%;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
 }
 
 h1 {
@@ -21,6 +23,52 @@ p {
 
 footer {
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+}
+/* the following code is taken from 
+https://stackoverflow.com/questions/306924/can-i-change-the-checkbox-size-using-css */
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 30px;
+  margin: 20px;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 20px;
+  display: inline;
+}
+
+input[type=radio]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 30px;
+  margin: 20px;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 20px;
+  display: inline;
 }
 
 /* Style the tab */
@@ -67,6 +115,24 @@ footer {
   height: 100%;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: auto;
+}
+
+.imgright {
+  display: block;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  width: 40%;
+  height: auto;
+}
+
 #addCart {
   font-size: 16px;
   padding: 7px;
@@ -79,7 +145,6 @@ footer {
 
 #displayCart {
   font-size: 16px;
-  margin: 7px;
 }
 
 #displayProduct {
@@ -94,25 +159,13 @@ footer {
 #welcome2 {
   text-align: center;
 }
-/* the following code is taken from 
-https://stackoverflow.com/questions/306924/can-i-change-the-checkbox-size-using-css */
 
-input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 30px;
-  margin: 10px;
+#selectModified {
+  width: 150px;
+  font-size: 50px;
 }
 
-/* Might want to wrap a span around your checkbox text */
-.checkboxtext
-{
-  /* Checkbox text */
-  font-size: 20px;
-  display: inline;
+#modifiedInput {
+  font-size: 16px;
+  padding: 7px;
 }

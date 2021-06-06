@@ -19,6 +19,7 @@
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
         <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button class="tablinks" onclick="openInfo(event, 'DeliveryPickup')">Delivery/Pickup</button>
         <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
         <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
         <button class="tablinks" onclick="openInfo(event, 'Home')" id="defaultOpen">Home</button>
@@ -28,36 +29,59 @@
     <div id="Home" class="tabcontent">
         <h2 id="welcome">Welcome to Vivienne's Supermarket</h2>
         <p id="welcome2">Select the Client tab to get started.</p>
+        <img src="undraw_online_groceries_a02y.svg" alt="online grocery" class="center">
     </div>
     <div id="Client" class="tabcontent">
-    <h2>Client Information</h2>
-    <p>Tell us a bit about you. Please select all diet preferences that apply to you:</p>
+        <h2>Client Information</h2>
+        <img class="imgright" src="undraw_shopping_app_flsj.svg" alt="shopping cart">
+        <p>Tell us a bit about you. Please select all diet preferences that apply to you:</p>
         <div id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-            <input type="checkbox" id="lactoseIntolerant" name="dietSelect" value="lactoseIntolerant">
-            <label for="lactoseIntolerant"> Lactose intolerant</label><br>
-            <input type="checkbox" id="nutAllergy" name="dietSelect" value="nutAllergy">
-            <label for="nutAllergy"> Nut allergy</label><br>
-            <input type="checkbox" id="organic" name="dietSelect" value="organic">
-            <label for="organic"> Organic</label><br>
-            <input type="checkbox" id="none" name="dietSelect" value="none">
-            <label for="none"> None of the above</label><br>
+            <span class="checkboxtext">
+                <input type="checkbox" id="lactoseIntolerant" name="dietSelect" value="lactoseIntolerant">
+                <label for="lactoseIntolerant"> Lactose intolerant</label><br>
+                <input type="checkbox" id="nutAllergy" name="dietSelect" value="nutAllergy">
+                <label for="nutAllergy"> Nut allergy</label><br>
+                <input type="checkbox" id="organic" name="dietSelect" value="organic">
+                <label for="organic"> Organic</label><br>
+                <input type="checkbox" id="none" name="dietSelect" value="none">
+                <label for="none"> None of the above</label><br>
+            </span>
         </div>
+        
+        <button id="addCart" onclick="openInfo(event, 'Products')"> Click to begin shopping</button>
     </div>
 
     <div id="Products" class="tabcontent">
-    <h2>Your targeted products</h2>
-    <p>We preselected products based on your preferences.</p>
-        Choose items to buy:
+        <h2>Your targeted products</h2>
+        <img class="imgright" src="undraw_add_to_cart_vkjp.svg" alt="add to cart">
+        <p>We preselected products based on your preferences.</p>
+        <p>Choose items to buy:</p>
         <div id="displayProduct"></div>
         <button id="addCart" type="button" class="block" onclick="selectedItems()">
-            Add selected items to cart.
+            Add to cart
         </button>
+        <br>
+        <button id="addCart" onclick="openInfo(event, 'Client')"> Click to change diet preferences</button>
     </div>
 
     <div id="Cart" class="tabcontent">
-    <h2>Cart</h2>
-    <p>Here is your cart.</p>
-    <div id="displayCart"></div>
+        <h2>Cart</h2>
+        <img class="imgright" src="undraw_Receipt_re_fre3.svg" alt="reciept">
+        <p>Here is your cart.</p>
+        <div id="displayCart"></div>
+    </div>
+
+    <div id="DeliveryPickup" class="tabcontent">
+        <h2>How would you like to retrieve your groceries?</h2>
+        <span class="checkboxtext" id="method" name="name" onchange="chooseRetrivalMethod(this.id, 'displayMethodForm')">
+            <img class="imgright" src="undraw_On_the_way_re_swjt.svg" alt="delivery">
+            <input type="radio" id="Pickup" name="method" value="Pickup">
+            <label for="Pickup">Curbside pickup</label><br>
+            <input type="radio" id="Delivery" name="method" value="Delivery">
+            <label for="Delivery">Delivery</label><br>
+        </span>
+        <div id="displayMethodForm"></div>
+        <button id="addCart" onclick="openInfo(event, 'Cart')"> Continue to your cart</button>
     </div>
 
     <script src="scripts/groceries.js"></script>
